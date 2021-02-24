@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TextInput} from 'react-native';
+import ViewImageScreen from './app/screens/ViewImageScreen';
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import {MaterialCommunityIcons} from '@expo/vector-icons';
+
+import AppText from "./app/components/AppText/AppText";
+import AppButton from './app/components/AppButton';
+import Card from './app/components/Card';
+import Screen from './app/components/Screen';
+import ListItem from './app/components/ListItem';
+import Icon from './app/components/Icon';
+import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
+import LoginScreen from './app/screens/LoginScreen';
+import RegisterScreen from './app/screens/RegisterScreen';
+
+const categories = [
+  {label: "Furniture", value: 1},
+  {label: "Clothing", value: 2},
+  {label: "Cameras", value: 3},
+]
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+    <RegisterScreen />
+  )
+}
