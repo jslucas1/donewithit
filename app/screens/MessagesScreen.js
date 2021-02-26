@@ -14,7 +14,7 @@ const initialMessages = [
     image: require('../assets/jeff.jpg')
     },
     {id: 2,
-        title: 'T2',
+        title: 'T2sdfasdfsadfasdfasfsdfsdfsdf asfsdf sadfasdf asdfsdafsdafsf asdfsadf',
         description: 'D2',
         image: require('../assets/jeff.jpg')
     },
