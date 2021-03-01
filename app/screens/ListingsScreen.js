@@ -8,41 +8,27 @@ import colors from '../config/colors';
 import routes from '../navigation/routes'
 import AppText from '../components/AppText/AppText';
 import AppButton from '../components/AppButton';
+import useApi from '../hooks/useApi';
 
 function ListingsScreen({navigation}) {
 
-    const [listings, setListings] = useState([]);
-    const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const getListingsApi = useApi(listingsApi.getListings);
 
     useEffect(() => {
-        loadListings();
+        getListingsApi.request();
     }, []);
 
-    const loadListings = async () => {
-        setLoading(true);
-        const response = await listingsApi.getListings();
-        setLoading(false);
-
-        if(!response.ok){
-            setError(true);
-            return;
-        }
-        
-        setError(false);
-        setListings(response.data);      
-    }
     return (
         <Screen style={styles.screen}>
-            {error && (
+            {getListingsApi.error && (
                 <>
                     <AppText>Couldn't retrieve the listings.</AppText>
                     <AppButton title="Retry" onPress={loadListings} />
                 </>)
             }
-            <ActivityIndicator visible={true} />
-            {/* <FlatList 
-                data={listings}
+            <ActivityIndicator visible={getListingsApi.loading} />
+            <FlatList 
+                data={getListingsApi.data}
                 keyExtractor = {listing => listing.id.toString()}
                 renderItem = {({item}) =>
                     <Card 
@@ -52,7 +38,7 @@ function ListingsScreen({navigation}) {
                         onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
                     />
                 }
-            /> */}
+            />
 
             
         </Screen>
