@@ -1,10 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import ListingEditScreen from '../screens/ListingEditScreen';
+import MapScreen from '../screens/MapScreen';
 import AccountScreen from '../screens/AccountScreen';
-import FeedNavigator from './FeedNavigator';
+import WelcomeScreen from '../screens/WelcomeScreen';
 import AccountNavigator from './AccountNavigator';
+import TideNavigator from './TideNavigator';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import NewListingButton from './NewListingButton';
 
@@ -13,32 +14,43 @@ const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
     <Tab.Navigator>
         <Tab.Screen 
-            name="Feed" 
-            component={FeedNavigator} 
+            name="Home" 
+            component={WelcomeScreen} 
             options = {{
                 tabBarIcon: ({color, size}) =>
                     <MaterialCommunityIcons name="home" color={color} size={size} />  
             }}
         />
         <Tab.Screen 
-            name="ListingEdit" 
-            component={ListingEditScreen} 
-            options = {({navigation, route}) => ({
-                tabBarButton: () => 
-                    <NewListingButton 
-                        onPress={() => navigation.navigate("ListingEdit")}
-                />,
-                tabBarIcon: ({color, size}) => (
-                    <MaterialCommunityIcons name="plus-circle" color={color} size={size} />
-                ),
-            })}
+            name="Location" 
+            component={MapScreen} 
+            options = {{
+                tabBarIcon: ({color, size}) =>
+                    <MaterialCommunityIcons name="google-maps" color={color} size={size} />
+            }}
         />
         <Tab.Screen 
-            name="Account" 
+            name="Weather" 
             component={AccountNavigator} 
             options = {{
                 tabBarIcon: ({color, size}) =>
-                    <MaterialCommunityIcons name="account" color={color} size={size} />
+                    <MaterialCommunityIcons name="weather-sunny" color={color} size={size} />
+            }}
+        />
+        <Tab.Screen 
+            name="Tides" 
+            component={TideNavigator} 
+            options = {{
+                tabBarIcon: ({color, size}) =>
+                    <MaterialCommunityIcons name="wave" color={color} size={size} />
+            }}
+        />
+        <Tab.Screen 
+            name="Safety" 
+            component={AccountNavigator} 
+            options = {{
+                tabBarIcon: ({color, size}) =>
+                    <MaterialCommunityIcons name="safety-goggles" color={color} size={size} />
             }}
         />
     </Tab.Navigator>
