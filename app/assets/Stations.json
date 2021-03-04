@@ -2,35 +2,35 @@
     "Sheet1": [
         {
             "Location": "Alabama Point",
-            "station number": "8730667",
+            "stationnumber": "8730667",
             "lat": "30.2786",
             "long": "-87.555",
             "predictions": "Harmonic"
         },
         {
             "Location": "Mobile Point (Fort Morgan)",
-            "station number": "8734635",
+            "stationnumber": "8734635",
             "lat": "30.2333",
             "long": "-88.02",
             "predictions": "Subordinate"
         },
         {
             "Location": "Gulf Shores, ICWW",
-            "station number": "8731439",
+            "stationnumber": "8731439",
             "lat": "30.2799",
             "long": "-87.6843",
             "predictions": "Harmonic"
         },
         {
             "Location": "Bon Secour, Bon Secour River",
-            "station number": "8731952",
+            "stationnumber": "8731952",
             "lat": "30.3033",
             "long": "-87.735",
             "predictions": "Subordinate"
         },
         {
             "Location": "DAUPHIN ISLAND",
-            "station number": "8735180",
+            "stationnumber": "8735180",
             "lat": "30.25",
             "long": "-88.075",
             "predictions": "Harmonic"

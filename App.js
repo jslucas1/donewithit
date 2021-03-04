@@ -11,12 +11,12 @@ import AppNavigator from './app/navigation/AppNavigator';
 import navigationTheme from './app/navigation/navigationTheme';
 import TidesScreen from './app/screens/TidesScreen';
 import MapScreen from './app/screens/MapScreen';
+import TidesMapScreen from './app/screens/TidesMapScreen';
 
 
 export default function App() {
 
   return (
-  
     <NavigationContainer theme={navigationTheme}>
       <AppNavigator />
     </NavigationContainer>

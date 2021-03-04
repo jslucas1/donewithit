@@ -37,7 +37,7 @@ function MapScreen({navigation}) {
         })
     }
     
-    const userLocation = useLocation();
+    userLocation = useLocation();
     const centerOnUserLocation = () => {
         console.log("in here " + JSON.stringify(userLocation));
         if(userLocation){
@@ -59,9 +59,9 @@ function MapScreen({navigation}) {
 
 
     }
-    // useEffect(() => {
-    //     centerOnUserLocation();
-    // }, [userLocation]);
+    useEffect(() => {
+        centerOnUserLocation();
+    }, []);
 
     
     

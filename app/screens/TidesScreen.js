@@ -6,10 +6,11 @@ import Screen from '../components/Screen';
  
 export default function TidesScreen({route}) {
     const theStation = route.params;
-    console.log(theStation);
-    let station = '8729840';
-    let beginDate= '20210302';
-    let endDate = '20210305';
+    console.log('made it to the tides screen and this is the station ' + JSON.stringify(theStation));
+    console.log('the station id would be ' + theStation.stationnumber);
+    let station = theStation.stationnumber;
+    let beginDate= '20210304';
+    let endDate = '20210307';
  
     const fetchTides = (station, beginDate, endDate) => {
         const fetchUrl = `https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?begin_date=${beginDate}&end_date=${endDate}&station=${station}&product=predictions&datum=STND&time_zone=gmt&interval=hilo&units=english&format=json`;

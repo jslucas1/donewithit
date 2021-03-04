@@ -1,13 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import TideScreen from '../screens/ListingsScreen';
-import MapScreen from '../screens/MapScreen';
+import TideScreen from '../screens/TidesScreen';
+import TideMapScreen from '../screens/TidesMapScreen';
 
 const Stack = createStackNavigator();
 
 const TideNavigator = () => (
     <Stack.Navigator mode="modal">
-        <Stack.Screen name="Map" component={MapScreen} />
+        <Stack.Screen name="Map" component={TideMapScreen} />
         <Stack.Screen 
             name="Tides" 
             component={TideScreen} 
